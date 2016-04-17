@@ -16,6 +16,8 @@ namespace TheWorld
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app)
         {
+            //This will look for default files type like index.html 
+            app.UseDefaultFiles();
             app.UseStaticFiles();
 
             app.Run(async (context) =>
