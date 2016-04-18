@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNet.Mvc;
+using TheWorld.Services;
 using TheWorld.ViewModels;
 
 
@@ -8,6 +9,12 @@ namespace TheWorld.Controllers.Web
 {
     public class AppController : Controller
     {
+        private IMailService mailService;
+
+        public AppController(IMailService mailService)
+        {
+            this.mailService = mailService;
+        }
         // GET: /<controller>/
         public IActionResult Index()
         {
@@ -27,12 +34,18 @@ namespace TheWorld.Controllers.Web
         [HttpPost]
         public IActionResult Contact(ContactViewModel model)
         {
+
             if (ModelState.IsValid)
             {
-
-
+                var email = Startup.Configuration["AppSettings:SiteEmailAddress"];
+                if (mailService.SendMail(email, email, $"Contact Page from {model.Name} ({model.Email})", model.Message))
+                {
+                    ModelState.Clear();
+                }
+                
                 return RedirectToAction("Index", "App");
             }
+
 
             return View(model);
         }
