@@ -1,0 +1,61 @@
+﻿@{
+       
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>The World - @ViewBag.Title</title>
+
+
+    <link href="~/css/style.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="sidebar">
+        <img class="headshot" src="~/img/vbali.jpg" title="Vaibhav Bali" />
+        <span id="username">Vaibhav Bali</span>
+
+
+
+        <ul class="menu">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+    <div id="wrapper">
+        <div id="main">
+            <button id="sidebarToggle">Toggle Sidebar</button>
+            <h2>The World</h2>
+            <p>
+                This will be a fun safe site!
+            </p>
+
+
+            <form action="/" method="post">
+                <div>
+                    <label>Date</label>
+                    <input type="text" name="name" value=" " />
+                </div>
+
+                <div>
+                    <label>Location</label>
+                    <input type="text" name="name" value=" " />
+                </div>
+
+                <div>
+                    <input type="submit" name="name" value="Add" />
+                </div>
+            </form>
+        </div>
+        <div id="footer">
+            &copy; 2015 The World Ltd.
+        </div>
+    </div>
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/site.js"></script>
+</body>
+</html>
