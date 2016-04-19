@@ -5,6 +5,7 @@
   },
 
   "dependencies": {
+    "EntityFramework.Core": "7.0.0-rc1-final",
     "jQuery-vsdoc": "2.1.0",
     "Microsoft.AspNet.Mvc": "6.0.0-rc1-final",
     "Microsoft.AspNet.Mvc.TagHelpers": "6.0.0-rc1-final",
