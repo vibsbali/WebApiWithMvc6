@@ -9,6 +9,7 @@ using TheWorld.Repository;
 
 namespace TheWorld.Controllers.Api
 {
+    [Route("api/trips")]
     public class TripController : Controller
     {
         private readonly IRepository repository;
@@ -18,10 +19,16 @@ namespace TheWorld.Controllers.Api
             this.repository = repository;
         }
 
-        [HttpGet("api/trips")]
+        [HttpGet]
         public JsonResult Get()
         {
             return Json(repository.GetAllTrips().ToList());
+        }
+
+        [HttpPost]
+        public void Post()
+        {
+            
         }
     }
 }
