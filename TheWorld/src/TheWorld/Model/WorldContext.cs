@@ -1,6 +1,7 @@
 ﻿using Microsoft.Data.Entity;
+using TheWorld.Entities;
 
-namespace TheWorld.Entities
+namespace TheWorld.Model
 {
     public class WorldContext : DbContext
     {

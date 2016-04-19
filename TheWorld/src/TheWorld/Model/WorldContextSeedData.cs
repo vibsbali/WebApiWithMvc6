@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using TheWorld.Entities;
 
-namespace TheWorld.Entities
+namespace TheWorld.Model
 {
     public class WorldContextSeedData
     {

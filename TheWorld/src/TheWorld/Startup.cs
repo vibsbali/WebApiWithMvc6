@@ -4,7 +4,8 @@ using Microsoft.AspNet.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.PlatformAbstractions;
-using TheWorld.Entities;
+using TheWorld.Model;
+using TheWorld.Repository;
 using TheWorld.Services;
 
 namespace TheWorld
@@ -33,6 +34,7 @@ namespace TheWorld
             services.AddMvc();
             services.AddScoped<IMailService, DebugMailService>();
             services.AddTransient<WorldContextSeedData>();
+            services.AddScoped<IRepository, WorldRespository>();
 
 
             services.AddEntityFramework()

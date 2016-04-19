@@ -39,7 +39,7 @@ input[type=submit] {
     padding: 3px;
 }
 
-.menu {
+/*.menu {
     font-size: 12px;
 }
 
@@ -49,7 +49,7 @@ input[type=submit] {
 
         .menu li.active {
             font-weight: bold;
-        }
+        }*/
 
         #sidebar {
             background: #2a2c36;

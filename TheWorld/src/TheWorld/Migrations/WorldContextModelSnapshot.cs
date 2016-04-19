@@ -4,6 +4,7 @@ using Microsoft.Data.Entity.Infrastructure;
 using Microsoft.Data.Entity.Metadata;
 using Microsoft.Data.Entity.Migrations;
 using TheWorld.Entities;
+using TheWorld.Model;
 
 namespace TheWorld.Migrations
 {

@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using Microsoft.AspNet.Mvc;
-using TheWorld.Entities;
+using TheWorld.Model;
+using TheWorld.Repository;
 using TheWorld.Services;
 using TheWorld.ViewModels;
 
@@ -12,17 +13,17 @@ namespace TheWorld.Controllers.Web
     public class AppController : Controller
     {
         private readonly IMailService mailService;
-        private readonly WorldContext context;
+        private readonly IRepository repository;
 
-        public AppController(IMailService mailService, WorldContext context)
+        public AppController(IMailService mailService, IRepository repository)
         {
             this.mailService = mailService;
-            this.context = context;
+            this.repository = repository;
         }
         // GET: /<controller>/
         public IActionResult Index()
         {
-            var trips = context.Trips.OrderBy(t => t.Name).ToList();
+            var trips = repository.GetAllTrips().OrderBy(t => t.Name).ToList();
             return View(trips);
         }
 
