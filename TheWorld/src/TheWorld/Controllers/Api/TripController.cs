@@ -1,5 +1,7 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Net;
+using AutoMapper;
 using Microsoft.AspNet.Mvc;
 using TheWorld.Entities;
 using TheWorld.Repository;
@@ -26,13 +28,23 @@ namespace TheWorld.Controllers.Api
         }
 
         [HttpPost]
-        public JsonResult Post([FromBody]TripViewModel trip)
+        public JsonResult Post([FromBody]TripViewModel vm)
         {
-            if (ModelState.IsValid)
+            try
             {
-                Response.StatusCode = (int) HttpStatusCode.Created;
-                return Json(true);
+                if (ModelState.IsValid)
+                {
+                    var newTrip = Mapper.Map<Trip>(vm);
+                    Response.StatusCode = (int)HttpStatusCode.Created;
+                    return Json(true);
+                }
             }
+            catch (Exception ex)
+            {
+                Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                return Json(new { Message = ex.Message });
+            }
+            
 
             Response.StatusCode = (int) HttpStatusCode.BadRequest;
             return Json(new {Message = "failed", ModelState = ModelState});
