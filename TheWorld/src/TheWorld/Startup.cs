@@ -1,13 +1,16 @@
-﻿using Microsoft.AspNet.Builder;
+﻿using AutoMapper;
+using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Hosting;
 using Microsoft.AspNet.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.PlatformAbstractions;
 using Newtonsoft.Json.Serialization;
+using TheWorld.Entities;
 using TheWorld.Model;
 using TheWorld.Repository;
 using TheWorld.Services;
+using TheWorld.ViewModels;
 
 namespace TheWorld
 {
@@ -52,6 +55,11 @@ namespace TheWorld
         public void Configure(IApplicationBuilder app, WorldContextSeedData seeder)
         {
             app.UseMvc();
+
+            Mapper.Initialize(config =>
+            {
+                config.CreateMap<Trip, TripViewModel>().ReverseMap();
+            });
 
             app.UseMvc(config =>
             {
