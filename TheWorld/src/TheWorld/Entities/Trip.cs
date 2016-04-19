@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using TheWorld.Entities;
 
 namespace TheWorld.Models
 {

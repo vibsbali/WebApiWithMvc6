@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TheWorld.Models
+namespace TheWorld.Entities
 {
     public class Stop
     {
