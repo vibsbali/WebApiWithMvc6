@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNet.Mvc;
+using TheWorld.Entities;
 using TheWorld.Services;
 using TheWorld.ViewModels;
 
@@ -9,11 +10,13 @@ namespace TheWorld.Controllers.Web
 {
     public class AppController : Controller
     {
-        private IMailService mailService;
+        private readonly IMailService mailService;
+        private readonly WorldContext context;
 
-        public AppController(IMailService mailService)
+        public AppController(IMailService mailService, WorldContext context)
         {
             this.mailService = mailService;
+            this.context = context;
         }
         // GET: /<controller>/
         public IActionResult Index()
