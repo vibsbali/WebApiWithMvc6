@@ -4,6 +4,7 @@ using Microsoft.AspNet.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.PlatformAbstractions;
+using TheWorld.Entities;
 using TheWorld.Services;
 
 namespace TheWorld
@@ -31,6 +32,12 @@ namespace TheWorld
         {
             services.AddMvc();
             services.AddScoped<IMailService, DebugMailService>();
+
+
+
+            services.AddEntityFramework()
+                .AddSqlServer()
+                .AddDbContext<WorldContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
