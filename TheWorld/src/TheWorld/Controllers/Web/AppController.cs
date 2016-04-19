@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNet.Mvc;
+﻿using System.Linq;
+using Microsoft.AspNet.Mvc;
 using TheWorld.Entities;
 using TheWorld.Services;
 using TheWorld.ViewModels;
@@ -21,7 +22,8 @@ namespace TheWorld.Controllers.Web
         // GET: /<controller>/
         public IActionResult Index()
         {
-            return View();
+            var trips = context.Trips.OrderBy(t => t.Name).ToList();
+            return View(trips);
         }
 
         public IActionResult About()
