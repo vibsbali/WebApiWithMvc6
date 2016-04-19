@@ -1,7 +1,9 @@
 ﻿using System.Linq;
+using System.Net;
 using Microsoft.AspNet.Mvc;
 using TheWorld.Entities;
 using TheWorld.Repository;
+using TheWorld.ViewModels;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -24,9 +26,16 @@ namespace TheWorld.Controllers.Api
         }
 
         [HttpPost]
-        public JsonResult Post([FromBody]Trip trip)
+        public JsonResult Post([FromBody]TripViewModel trip)
         {
-            return Json(true);
+            if (ModelState.IsValid)
+            {
+                Response.StatusCode = (int) HttpStatusCode.Created;
+                return Json(true);
+            }
+
+            Response.StatusCode = (int) HttpStatusCode.BadRequest;
+            return Json(new {Message = "failed", ModelState = ModelState});
         }
     }
 }
