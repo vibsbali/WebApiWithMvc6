@@ -1,5 +1,9 @@
 ﻿{
   "AppSettings": {
-    "SiteEmailAddress": "me@aol.com" 
+    "SiteEmailAddress": "me@aol.com"
+  },
+  "Data": {
+    "ConnectionString": "Server=(localdb)\\MSSQLLocalDB;Database=TheWorldDb;Trusted_Connection=true;MultipleActiveRecordSets=true"
   }
 }
+
