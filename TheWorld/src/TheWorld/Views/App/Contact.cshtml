@@ -19,19 +19,26 @@
 
             <div asp-validation-summary="ValidationSummary.ModelOnly"></div>
 
-            <label asp-for="Name">Name</label>
-            <input asp-for="Name" />
-            <span asp-validation-for="Name"></span>
+            <div class="from-group">
+                <label asp-for="Name">Name</label>
+                <input class="form-control" asp-for="Name" />
+                <span class="text-muted" asp-validation-for="Name"></span>
+            </div>
 
-            <label asp-for="Email">Email</label>
-            <input asp-for="Email" />
-            <span asp-validation-for="Email"></span>
+            <div class="form-group">
+                <label asp-for="Email">Email</label>
+                <input class="form-control" asp-for="Email" />
+                <span class="text-muted" asp-validation-for="Email"></span>
+            </div>
 
-            <label asp-for="Message">Message</label>
-            <textarea asp-for="Message" cols="40" rows="4"></textarea>
-            <span asp-validation-for="Message"></span>
+            <div class="form-group">
+                <label asp-for="Message">Message</label>
+                <textarea class="form-control" asp-for="Message" cols="40" rows="4"></textarea>
+                <span class="text-muted" asp-validation-for="Message"></span>
+            </div>
             <div>
-                <input type="submit" value="Send Message" />
+                <a asp-controller="App" asp-action="Index" class="btn btn-default">Cancel</a>
+                <input class="btn btn-success" type="submit" value="Send Message"/>
             </div>
         </form>
     </div>
