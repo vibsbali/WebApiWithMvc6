@@ -11,11 +11,11 @@ label {
 
 input[type=text], input[type=password], textarea {
     width: 150px;
-}*/
+}
 
 input[type=submit] {
     margin: 10px;
-}
+}*/
 
 #main {
     background-color: #eee;

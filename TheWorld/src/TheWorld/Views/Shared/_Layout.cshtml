@@ -3,7 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <title>The World - @ViewBag.Title</title>
-    <link href="~/lib/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="~/lib/fontawesome/css/font-awesome.min.css" rel="stylesheet" />
     <link href="~/css/style.css" rel="stylesheet" />
 </head>
 <body>
@@ -19,12 +20,14 @@
     </div>
     <div id="wrapper">
         <div id="main">
-            <button id="sidebarToggle">Toggle Sidebar</button>
+            <button id="sidebarToggle" class="btn btn-primary btn-sm">
+                <i class="glyphicon glyphicon-chevron-left"></i>
+            </button>
 
             @RenderBody()
         </div>
         <div id="footer">
-            &copy; 2015 The World Ltd.
+            <p class="text-primary">&copy; 2015 The World Ltd.</p>
         </div>
     </div>
 
