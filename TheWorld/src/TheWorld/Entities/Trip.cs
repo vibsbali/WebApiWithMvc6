@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using TheWorld.Entities;
 
-namespace TheWorld.Models
+namespace TheWorld.Entities
 {
     public class Trip
     {

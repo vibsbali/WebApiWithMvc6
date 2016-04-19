@@ -3,7 +3,7 @@
     "SiteEmailAddress": "me@aol.com"
   },
   "Data": {
-    "ConnectionString": "Server=(localdb)\\MSSQLLocalDB;Database=TheWorldDb;Trusted_Connection=true;MultipleActiveRecordSets=true"
+    "ConnectionString": "Server=(localdb)\\MSSQLLocalDB;Database=TheWorldDb;Trusted_Connection=true;MultipleActiveResultSets=true"
   }
 }
 

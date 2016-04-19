@@ -32,7 +32,7 @@ namespace TheWorld
         {
             services.AddMvc();
             services.AddScoped<IMailService, DebugMailService>();
-
+            services.AddTransient<WorldContextSeedData>();
 
 
             services.AddEntityFramework()
@@ -41,7 +41,7 @@ namespace TheWorld
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app)
+        public void Configure(IApplicationBuilder app, WorldContextSeedData seeder)
         {
             app.UseMvc();
 
@@ -50,6 +50,8 @@ namespace TheWorld
                 config.MapRoute("Default", "{controller}/{action}/{id?}", new {controller = "App", action = "Index"});
             });
             
+            seeder.EnsureSeedData();
+
             //This will look for default files type like index.html 
             app.UseDefaultFiles();
             app.UseStaticFiles();
