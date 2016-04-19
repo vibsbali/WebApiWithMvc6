@@ -9,27 +9,31 @@
 }
 
 
-<h2>
-    Contact Us
-</h2>
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <h2>
+            Contact Us
+        </h2>
 
-<form method="post">
+        <form method="post">
 
-    <div asp-validation-summary="ValidationSummary.ModelOnly"></div>
+            <div asp-validation-summary="ValidationSummary.ModelOnly"></div>
 
-    <label asp-for="Name">Name</label>
-    <input asp-for="Name" />
-    <span asp-validation-for="Name"></span>
+            <label asp-for="Name">Name</label>
+            <input asp-for="Name" />
+            <span asp-validation-for="Name"></span>
 
-    <label asp-for="Email">Email</label>
-    <input asp-for="Email" />
-    <span asp-validation-for="Email"></span>
+            <label asp-for="Email">Email</label>
+            <input asp-for="Email" />
+            <span asp-validation-for="Email"></span>
 
-    <label asp-for="Message">Message</label>
-    <textarea asp-for="Message" cols="40" rows="4"></textarea>
-    <span asp-validation-for="Message"></span>
-    <div>
-        <input type="submit" value="Send Message" />
+            <label asp-for="Message">Message</label>
+            <textarea asp-for="Message" cols="40" rows="4"></textarea>
+            <span asp-validation-for="Message"></span>
+            <div>
+                <input type="submit" value="Send Message" />
+            </div>
+        </form>
     </div>
-</form>
+</div>
 
