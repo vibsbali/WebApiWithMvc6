@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using Microsoft.AspNet.Mvc;
+using TheWorld.Entities;
 using TheWorld.Repository;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
@@ -26,9 +24,9 @@ namespace TheWorld.Controllers.Api
         }
 
         [HttpPost]
-        public void Post()
+        public JsonResult Post([FromBody]Trip trip)
         {
-            
+            return Json(true);
         }
     }
 }
