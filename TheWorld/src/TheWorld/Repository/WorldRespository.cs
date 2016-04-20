@@ -39,5 +39,10 @@ namespace TheWorld.Repository
 
             return false;
         }
+
+        public void AddStop(string tripName, Stop newStop)
+        {
+            
+        }
     }
 }

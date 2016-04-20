@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using TheWorld.Entities;
 
 namespace TheWorld.ViewModels
 {
@@ -12,5 +14,7 @@ namespace TheWorld.ViewModels
         public string Name { get; set; }
 
         public DateTime Created { get; set; } = DateTime.Now;
+
+        public IEnumerable<Stop> Stops { get; set; }
     }
 }

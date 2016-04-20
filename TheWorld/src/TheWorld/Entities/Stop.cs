@@ -12,5 +12,8 @@ namespace TheWorld.Entities
         public DateTime Arrival { get; set; }
 
         public int Order { get; set; }
+
+        //Adding Reference Key
+        public int TripId { get; set; }
     }
 }
