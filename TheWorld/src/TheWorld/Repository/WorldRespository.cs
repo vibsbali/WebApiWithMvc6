@@ -23,5 +23,21 @@ namespace TheWorld.Repository
         {
             return context.Trips.Include(t => t.Stops);
         }
+
+        public void AddTrip(Trip newTrip)
+        {
+            context.Add(newTrip);
+        }
+
+        public bool SaveAll()
+        {
+            var result = context.SaveChanges();
+            if (result > 0)
+            {
+                return true;
+            }
+
+            return false;
+        }
     }
 }

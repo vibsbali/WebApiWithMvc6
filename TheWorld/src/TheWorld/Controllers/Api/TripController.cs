@@ -39,8 +39,12 @@ namespace TheWorld.Controllers.Api
                 if (ModelState.IsValid)
                 {
                     var newTrip = Mapper.Map<Trip>(vm);
-                    Response.StatusCode = (int)HttpStatusCode.Created;
-                    return Json(true);
+                    repository.AddTrip(newTrip);
+                    if (repository.SaveAll())
+                    {
+                        Response.StatusCode = (int)HttpStatusCode.Created;
+                        return Json(true);
+                    }
                 }
             }
             catch (Exception ex)
