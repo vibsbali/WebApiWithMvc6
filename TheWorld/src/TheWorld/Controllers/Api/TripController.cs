@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using AutoMapper;
@@ -24,7 +25,10 @@ namespace TheWorld.Controllers.Api
         [HttpGet]
         public JsonResult Get()
         {
-            return Json(repository.GetAllTrips().ToList());
+            var results = repository.GetAllTripsWithStops().ToList();
+            //Notice the use of IEnumberable<T>
+            var mappedResults = Mapper.Map<IEnumerable<TripViewModel>>(results);
+            return Json(mappedResults);
         }
 
         [HttpPost]
